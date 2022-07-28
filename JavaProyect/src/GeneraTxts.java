@@ -24,7 +24,7 @@ class Preparacion
 
 interface genSalida
 {
-	public void generaSalida(Path file, String texto, Path file2, String texto2);
+	public static void generaSalida(Path file, String texto, Path file2, String texto2) {};
 }
 
 
@@ -74,6 +74,7 @@ public class GeneraTxts implements genSalida
 				ing4.nombre + "\n" + "\n" + ing5.nombre + "\n" + "\n" + ing6.nombre + "\n" + "\n" +
 				ing7.nombre + "\n" + "\n" + ing8.nombre + "\n" + "\n" + ing9.nombre + "\n" + "\n" +
 				ing10.nombre + "\n" + "\n";
+	
 		
 		
 		Preparacion prep = new Preparacion();
@@ -92,10 +93,11 @@ public class GeneraTxts implements genSalida
 		String recetaInstrucciones = "recetaInstrucciones_salida.txt";
 		Path camino2 = Paths.get(recetaInstrucciones);
 		
+		generaSalida(camino1, texto1, camino2, texto2);
 		
 	}
 	
-	public void generaSalida(Path camino1, String texto1, Path camino2, String texto2) 
+	public static void generaSalida(Path camino1, String texto1, Path camino2, String texto2) 
 	{
 		try
         {
@@ -117,6 +119,8 @@ public class GeneraTxts implements genSalida
         }		
 		
 	}
+	
+	
 	
 	
 
